@@ -1,0 +1,5 @@
+Gtk-Message: 22:52:09.181: GtkDialog mapped without a transient parent. This is discouraged.
+Gtk-Message: 22:56:11.366: GtkDialog mapped without a transient parent. This is discouraged.
+Gtk-Message: 22:56:38.004: GtkDialog mapped without a transient parent. This is discouraged.
+Gdk-Message: 21:07:37.854: openscad: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
