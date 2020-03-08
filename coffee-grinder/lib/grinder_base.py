@@ -5,16 +5,20 @@ from solid.utils import *  # Not required, but the utils module is useful
 
 
 class GrinderBase:
-    dell_stick_hole_length = 50
+    dell_stick_hole_length = 20
     dell_stick_hole_diameter = 16.10
     dell_stick_thickness = 6
     base_dimensions = 145
 
-    def ___init___(self, dell_stick_hole_length, dell_stick_hole_diameter, dell_stick_thickness, base_dimensions):
-        self.dell_stick_hole_length = dell_stick_hole_length
+    base_height = 15
+    base_hole_width = 47
+
+    def __init__(self):
+        pass
+
+    def __init__(self, base_hole_width, dell_stick_hole_diameter):
+        self.base_hole_width = base_hole_width
         self.dell_stick_hole_diameter = dell_stick_hole_diameter
-        self.dell_stick_thickness = dell_stick_thickness
-        self.base_dimensions = base_dimensions
 
     def hole(self):
         return linear_extrude(height=self.dell_stick_hole_length + 4)(circle(d=self.dell_stick_hole_diameter))
@@ -29,7 +33,13 @@ class GrinderBase:
 
 
     def platform_base(self):
-        return linear_extrude(height=30)(square(self.base_dimensions, center=True))
+        return linear_extrude(height=self.base_height)(
+            difference() (
+                square(self.base_dimensions, center=True),
+                square(self.base_hole_width, center=True)
+            )
+        )
+
 
 
     def platform_holes(self):

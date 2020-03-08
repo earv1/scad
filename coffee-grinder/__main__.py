@@ -5,6 +5,8 @@ from solid.utils import *  # Not required, but the utils module is useful
 
 base = GrinderBase()
 
+top = GrinderBase(90, 17)
+
 
 d = difference()(
     cube(10),  # Note the comma between each element!
