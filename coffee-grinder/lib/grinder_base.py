@@ -16,7 +16,8 @@ class GrinderBase:
     def __init__(self):
         pass
 
-    def __init__(self, base_hole_width, dell_stick_hole_diameter):
+    @classmethod
+    def custom_diameter(self, base_hole_width, dell_stick_hole_diameter):
         self.base_hole_width = base_hole_width
         self.dell_stick_hole_diameter = dell_stick_hole_diameter
 

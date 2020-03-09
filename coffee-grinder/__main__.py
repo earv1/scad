@@ -1,19 +1,15 @@
 from .lib.grinder_base import GrinderBase
+from .lib.dell_connector import DellConnector
 
 from solid import *
 from solid.utils import *  # Not required, but the utils module is useful
 
 base = GrinderBase()
 
-top = GrinderBase(90, 17)
+top = GrinderBase.custom_diameter(90, 17)
 
+connector = DellConnector(x_holders=1, y_holders=2)
 
-d = difference()(
-    cube(10),  # Note the comma between each element!
-    sphere(15)
-)
-
-scad = base.platform()
-
+scad = connector.multiple_dell_holder()
 
 scad_render_to_file(scad, "coffee-grinder3.scad")
