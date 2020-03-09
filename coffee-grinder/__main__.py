@@ -8,7 +8,7 @@ base = GrinderBase()
 
 top = GrinderBase.custom_diameter(90, 17)
 
-connector = DellConnector(x_holders=1, y_holders=2)
+connector = DellConnector(x_holders=4, y_holders=2)
 
 scad = connector.multiple_dell_holder()
 
