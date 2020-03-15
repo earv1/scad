@@ -5,6 +5,9 @@ from solid.utils import *  # Not required, but the utils module is useful
 
 
 class DellConnector:
+
+    join_angle = 90
+
     dell_stick_hole_length = 20
     dell_stick_hole_diameter = 16.10
     dell_stick_holder_thickness = 6
