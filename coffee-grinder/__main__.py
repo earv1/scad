@@ -15,7 +15,6 @@ connector = DellConnector(x_holders=4, y_holders=2)
 scad = connector.rotate_to_print(connector.multiple_dell_holder())
 scad = connector.multiple_dell_holder()
 
-scad = RoundHolder().hollow_holder_shape()
 scad = RoundHolder().completeHolder()
 
 scad_render_to_file(scad, "coffee-grinder3.scad")
