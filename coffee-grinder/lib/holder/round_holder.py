@@ -16,7 +16,7 @@ class RoundHolder:
     def solid_holder_shape(self):
         return rotate(a=180, v = UP_VEC)(
             rotate_extrude(angle=360, segments=20)(
-                resize([46, 0, 1], auto=True)(
+                resize([45, 0, 1], auto=True)(
                     import_("coffee-grinder/round_holder_width_45_half.svg"))))
 
     def hollow_holder_shape(self):
