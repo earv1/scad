@@ -7,21 +7,21 @@ class RoundHolder:
     base_dimensions = 80
     base_hole_width = 47
 
-    base_height = 4
-    divider_height_start = 6 + base_height - 0.1
+    base_height = 10
+    divider_height_start = 6 + base_height
     divider_width = 3
 
     image_width = 32
 
-    def solid_holder_shape(self):
-        return rotate(a=180, v = UP_VEC)(
-            rotate_extrude(angle=360, segments=20)(
-                resize([45, 0, 1], auto=True)(
-                    import_("coffee-grinder/round_holder_width_45_half.svg"))))
+    def holder_inside(self):
+        return up(50)(sphere(50))
 
-    def hollow_holder_shape(self):
-        return (scale(1.1)(self.solid_holder_shape())) + translate((0, 0, 10))(hole()(
-            self.solid_holder_shape()))
+    def holder_exterior(self):
+        return scale(1.05)(
+            up(50)(sphere(50) - up(50)(cube(100, center=True))))
+
+    def complete_holder(self):
+        return self.holder_exterior() + hole()(self.holder_inside())
 
     def dividers(self):
         square_size = 500
@@ -40,10 +40,10 @@ class RoundHolder:
 
     def base(self):
         return linear_extrude(self.base_height)(
-            square(self.base_dimensions, center=True) - hole()(
+            square(self.base_dimensions, center=True)) - hole()(
+            linear_extrude(self.base_height/2)(
                 square(self.base_hole_width, center=True)
             ))
 
     def completeHolder(self):
-        return self.hollow_holder_shape()# + self.base() - hole() (self.dividers())
-        #return self.base() - hole() (self.dividers())
+        return self.complete_holder() + self.base() - hole() (self.dividers())
