@@ -7,18 +7,21 @@ class RoundHolder:
     base_dimensions = 80
     base_hole_width = 47
 
-    base_height = 10
+    base_height = 15
     divider_height_start = 6 + base_height
     divider_width = 3
 
     image_width = 32
 
     def holder_inside(self):
-        return up(50)(sphere(50))
+        return up(60)(sphere(50))
+
+    #def tightener_groove(self):
 
     def holder_exterior(self):
-        return scale(1.05)(
-            up(50)(sphere(50) - up(50)(cube(100, center=True))))
+        return up(self.base_height) (
+            linear_extrude(20, scale=1.23)(circle(d=80))) + scale(1.05)(
+            up(50)(sphere(50) - up(65)(cube(100, center=True))))
 
     def complete_holder(self):
         return self.holder_exterior() + hole()(self.holder_inside())
@@ -41,7 +44,7 @@ class RoundHolder:
     def base(self):
         return linear_extrude(self.base_height)(
             square(self.base_dimensions, center=True)) - hole()(
-            linear_extrude(self.base_height/2)(
+            linear_extrude(self.base_height * 3)(
                 square(self.base_hole_width, center=True)
             ))
 

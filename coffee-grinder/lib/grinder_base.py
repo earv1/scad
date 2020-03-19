@@ -6,7 +6,10 @@ from solid.utils import *  # Not required, but the utils module is useful
 
 class GrinderBase:
     dell_stick_hole_length = 20
-    dell_stick_hole_diameter = 16.10
+    dell_stick_hole_diameter = 16.30
+    #16.2=tight
+    #16.3=snug
+    #16.6=loose
     dell_stick_thickness = 6
     base_dimensions = 145
 
