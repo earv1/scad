@@ -14,7 +14,7 @@ class RoundHolder:
     image_width = 32
 
     def holder_inside(self):
-        return up(60)(sphere(50))
+        return up(55)(sphere(50))
 
     #def tightener_groove(self):
 

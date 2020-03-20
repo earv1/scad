@@ -26,3 +26,6 @@ scad_render_to_file(base, "coffee-grinder_base.scad")
 
 round_holder = RoundHolder().completeHolder()
 scad_render_to_file(round_holder, "coffee-round-holder.scad")
+
+connector = linear_extrude(height=30)(square(47, center=True)-square(40, center=True))
+scad_render_to_file(connector, "coffee-connector.scad")
