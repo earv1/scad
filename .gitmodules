@@ -1,0 +1,10 @@
+[submodule "lib/Round-Anything"]
+	path = lib/Round-Anything
+	url = git@github.com:Irev-Dev/Round-Anything.git
+	branch = master
+[submodule "lib/relativity.scad"]
+	path = lib/relativity.scad
+	url = git@github.com:davidson16807/relativity.scad.git
+[submodule "lib/BOSL"]
+	path = lib/BOSL
+	url = git@github.com:revarbat/BOSL.git
